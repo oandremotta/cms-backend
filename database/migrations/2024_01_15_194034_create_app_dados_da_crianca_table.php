@@ -19,7 +19,8 @@ return new class extends Migration
             $table->string('professor');
             $table->string('ano_serie');
             $table->string('periodo');
-            $table->string('turma');
+            $table->string('turma');            
+            $table->integer('ordem');
             $table->foreignId('idTenant')->constrained('tenants');
         });
     }

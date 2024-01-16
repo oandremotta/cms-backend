@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AppDadosCriancaController;
 use App\Http\Controllers\FuncionalidadeController;
+use App\Http\Controllers\TenantController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,10 @@ Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
 
 Route::get('/modulos', [FuncionalidadeController::class, 'listarFuncionalidades']);
 Route::get('/funcionalidades', [FuncionalidadeController::class, 'listarFuncionalidades']);
+Route::get('/tenants', [TenantController::class, 'index']);
+Route::get('/tenants/{tenant}', [TenantController::class, 'show']);
+
+
+##APP
+Route::get('/app/dados-da-crianca/{tenant}', [AppDadosCriancaController::class, 'show']);
+
